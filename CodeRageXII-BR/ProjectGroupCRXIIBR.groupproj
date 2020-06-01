@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{499FC737-4DE6-49AE-A288-56D066B98C1A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TFDBatchMoveJSONWriter\JSONWriter.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RADServer101\RADServer101.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JSONWriter">
+        <MSBuild Projects="TFDBatchMoveJSONWriter\JSONWriter.dproj"/>
+    </Target>
+    <Target Name="JSONWriter:Clean">
+        <MSBuild Projects="TFDBatchMoveJSONWriter\JSONWriter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JSONWriter:Make">
+        <MSBuild Projects="TFDBatchMoveJSONWriter\JSONWriter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RADServer101">
+        <MSBuild Projects="RADServer101\RADServer101.dproj"/>
+    </Target>
+    <Target Name="RADServer101:Clean">
+        <MSBuild Projects="RADServer101\RADServer101.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RADServer101:Make">
+        <MSBuild Projects="RADServer101\RADServer101.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JSONWriter;RADServer101"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JSONWriter:Clean;RADServer101:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JSONWriter:Make;RADServer101:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

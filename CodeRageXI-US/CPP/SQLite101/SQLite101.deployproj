@@ -1,0 +1,462 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Condition="Exists('$(BDS)\bin\CodeGear.Deployment.targets')" Project="$(BDS)\bin\CodeGear.Deployment.targets"/>
+    <ProjectExtensions>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <PropertyGroup>
+        <DeviceId Condition="'$(Platform)'=='Android'"/>
+        <DeviceId Condition="'$(Platform)'=='iOSDevice32'"/>
+        <DeviceId Condition="'$(Platform)'=='iOSDevice64'"/>
+    </PropertyGroup>
+    <ItemGroup Condition="'$(Platform)'=='iOSDevice64'"/>
+    <ItemGroup Condition="'$(Platform)'=='Win64'">
+        <DeployFile Include="$(BDS)\Redist\Win64\dbrtl240.bpl" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>dbrtl240.bpl</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\Win64\bindcompfmx240.bpl" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>bindcompfmx240.bpl</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="..\..\fddemo.sdb" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>fddemo.sdb</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\Win64\FireDACCommonDriver240.bpl" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>FireDACCommonDriver240.bpl</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\Win64\bindcomp240.bpl" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>bindcomp240.bpl</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\Win64\fmxFireDAC240.bpl" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>fmxFireDAC240.bpl</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin64\cc64240.dll" Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>cc64240.dll</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\Win64\fmx240.bpl" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>fmx240.bpl</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin64\cc64240mt.dll" Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>cc64240mt.dll</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\Win64\FireDACSqliteDriver240.bpl" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>FireDACSqliteDriver240.bpl</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include=".\Win64\Release\SQLite101.exe" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>SQLite101.exe</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin64\borlndmm.dll" Condition="'$(UsingDelphiRTL)'=='true'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>borlndmm.dll</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\Win64\FireDACCommon240.bpl" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>FireDACCommon240.bpl</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\Win64\bindengine240.bpl" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>bindengine240.bpl</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\Win64\FireDAC240.bpl" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>FireDAC240.bpl</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\Win64\rtl240.bpl" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>rtl240.bpl</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+    </ItemGroup>
+    <ItemGroup Condition="'$(Platform)'=='iOSDevice32'"/>
+    <ItemGroup Condition="'$(Platform)'=='Win32'">
+        <DeployFile Include="$(BDS)\bin\cc32c240mt.dll" Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>cc32c240mt.dll</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\cc32240mt.dll" Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>cc32240mt.dll</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\cc32c240.dll" Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>cc32c240.dll</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\borlndmm.dll" Condition="'$(UsingDelphiRTL)'=='true'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>borlndmm.dll</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\cc32240.dll" Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>cc32240.dll</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\..\fddemo.sdb" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>fddemo.sdb</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include=".\Win32\Debug\SQLite101.exe" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>SQLite101\</RemoteDir>
+            <RemoteName>SQLite101.exe</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+    </ItemGroup>
+    <ItemGroup Condition="'$(Platform)'=='OSX32'">
+        <DeployFile Include="$(BDS)\Redist\OSX32\bplfmx240.dylib" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>bplfmx240.dylib</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\cbuilder_PROJECTICNS.icns" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\Contents\Resources\</RemoteDir>
+            <RemoteName>SQLite101.icns</RemoteName>
+            <DeployClass>ProjectOSXResource</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\OSX32\bplbindcomp240.dylib" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>bplbindcomp240.dylib</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\OSX32\bplFireDACSqliteDriver240.dylib" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>bplFireDACSqliteDriver240.dylib</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\OSX32\bplbindengine240.dylib" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>bplbindengine240.dylib</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\OSX32\bplxmlrtl240.dylib" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>bplxmlrtl240.dylib</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include=".\OSX32\Release\SQLite101.info.plist" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\Contents\</RemoteDir>
+            <RemoteName>Info.plist</RemoteName>
+            <DeployClass>ProjectOSXInfoPList</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\OSX32\bplfmxFireDAC240.dylib" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>bplfmxFireDAC240.dylib</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\osx32\libcgcrtl.dylib" Condition="'$(DynamicRTL)'=='true'">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>libcgcrtl.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\OSX32\bplFireDACCommonDriver240.dylib" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>bplFireDACCommonDriver240.dylib</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\osx32\libcgstl.dylib" Condition="'$(DynamicRTL)'=='true'">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>libcgstl.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\OSX32\bplFireDAC240.dylib" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>bplFireDAC240.dylib</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\OSX32\bplbindcompfmx240.dylib" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>bplbindcompfmx240.dylib</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\osx32\libcgsqlite3.dylib">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>libcgsqlite3.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include=".\OSX32\Release\SQLite101.entitlements" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\..\</RemoteDir>
+            <RemoteName>SQLite101.entitlements</RemoteName>
+            <DeployClass>ProjectOSXEntitlements</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\..\fddemo.sdb" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\Contents\Resources\StartUp\Documents\</RemoteDir>
+            <RemoteName>fddemo.sdb</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include=".\OSX32\Release\SQLite101" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>SQLite101</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>libcgunwind.1.0.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\OSX32\bplrtl240.dylib" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>bplrtl240.dylib</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\OSX32\bplFireDACCommon240.dylib" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>bplFireDACCommon240.dylib</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\OSX32\bpldbrtl240.dylib" Condition="'$(Config)'=='Release'">
+            <RemoteDir>SQLite101.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>bpldbrtl240.dylib</RemoteName>
+            <DeployClass>DependencyPackage</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+    </ItemGroup>
+    <ItemGroup Condition="'$(Platform)'=='Android'"/>
+    <ItemGroup Condition="'$(Platform)'=='iOSSimulator'">
+        <DeployFile Include="$(BDS)\Redist\iossimulator\libPCRE.dylib">
+            <RemoteDir>SQLite101.app\</RemoteDir>
+            <RemoteName>libPCRE.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib">
+            <RemoteDir>SQLite101.app\</RemoteDir>
+            <RemoteName>libcgunwind.1.0.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+    </ItemGroup>
+</Project>

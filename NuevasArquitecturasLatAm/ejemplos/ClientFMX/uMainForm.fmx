@@ -1,0 +1,773 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  Caption = 'MainForm'
+  ClientHeight = 591
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object TabControl1: TTabControl
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 591.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = None
+    Sizes = (
+      640s
+      591s
+      640s
+      591s)
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem1'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object ListView1: TListView
+        ItemAppearanceClassName = 'TListItemRightDetailAppearance'
+        ItemEditAppearanceClassName = 'TListItemRightDetailDeleteAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        Align = Client
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 630.000000000000000000
+        Size.Height = 581.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        ItemAppearanceObjects.ItemObjects.Text.Font.StyleExt = {00070000000000000004000000}
+        ItemAppearanceObjects.ItemObjects.Accessory.AccessoryType = Detail
+        OnItemClickEx = ListView1ItemClickEx
+        OnPullRefresh = ListView1PullRefresh
+        SearchVisible = True
+        PullToRefresh = True
+        PullRefreshWait = True
+      end
+      object CalloutRectangle1: TCalloutRectangle
+        Anchors = [akTop, akRight]
+        Fill.Color = claCornflowerblue
+        Opacity = 0.000000000000000000
+        Position.X = 504.000000000000000000
+        Position.Y = 56.000000000000000000
+        Size.Width = 113.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        CalloutWidth = 23.000000000000000000
+        CalloutLength = 15.000000000000000000
+        CalloutPosition = Left
+        object Label1: TLabel
+          Align = Client
+          AutoSize = True
+          StyledSettings = [Family]
+          Margins.Left = 25.000000000000000000
+          Size.Width = 88.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 11.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claWhite
+          Text = 'Pull to Refresh the List...'
+          TabOrder = 0
+        end
+        object FloatAnimation1: TFloatAnimation
+          AutoReverse = True
+          Duration = 3.000000000000000000
+          PropertyName = 'Opacity'
+          StartValue = 0.000000000000000000
+          StopValue = 1.000000000000000000
+        end
+      end
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem2'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object ListBox1: TListBox
+        Align = Client
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 630.000000000000000000
+        Size.Height = 533.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'transparentlistboxstyle'
+        TabOrder = 0
+        DisableFocusEffect = True
+        ItemHeight = 40.000000000000000000
+        DefaultItemStyles.ItemStyle = 'listboxitemnodetail'
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 630.000000000000000000
+        Viewport.Height = 533.000000000000000000
+        object ListBoxItem1: TListBoxItem
+          TextSettings.Font.Size = 10.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          StyledSettings = [Family, FontColor, Other]
+          Padding.Left = 100.000000000000000000
+          Padding.Top = 5.000000000000000000
+          Padding.Right = 5.000000000000000000
+          Padding.Bottom = 5.000000000000000000
+          Size.Width = 630.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'CUST_NO'
+          object Edit1: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            Size.Width = 525.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            KillFocusByReturn = True
+          end
+        end
+        object ListBoxItem2: TListBoxItem
+          TextSettings.Font.Size = 10.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          StyledSettings = [Family, FontColor, Other]
+          Padding.Left = 100.000000000000000000
+          Padding.Top = 5.000000000000000000
+          Padding.Right = 5.000000000000000000
+          Padding.Bottom = 5.000000000000000000
+          Position.Y = 40.000000000000000000
+          Size.Width = 630.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'CUSTOMER'
+          object Edit2: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            Size.Width = 525.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            KillFocusByReturn = True
+          end
+        end
+        object ListBoxItem3: TListBoxItem
+          TextSettings.Font.Size = 10.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          StyledSettings = [Family, FontColor, Other]
+          Padding.Left = 100.000000000000000000
+          Padding.Top = 5.000000000000000000
+          Padding.Right = 5.000000000000000000
+          Padding.Bottom = 5.000000000000000000
+          Position.Y = 80.000000000000000000
+          Size.Width = 630.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'CONTACT_FIRST'
+          object Edit3: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            Size.Width = 525.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            KillFocusByReturn = True
+          end
+        end
+        object ListBoxItem4: TListBoxItem
+          TextSettings.Font.Size = 10.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          StyledSettings = [Family, FontColor, Other]
+          Padding.Left = 100.000000000000000000
+          Padding.Top = 5.000000000000000000
+          Padding.Right = 5.000000000000000000
+          Padding.Bottom = 5.000000000000000000
+          Position.Y = 120.000000000000000000
+          Size.Width = 630.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          Text = 'CONTACT_LAST'
+          object Edit4: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            Size.Width = 525.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            KillFocusByReturn = True
+          end
+        end
+        object ListBoxItem5: TListBoxItem
+          TextSettings.Font.Size = 10.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          StyledSettings = [Family, FontColor, Other]
+          Padding.Left = 100.000000000000000000
+          Padding.Top = 5.000000000000000000
+          Padding.Right = 5.000000000000000000
+          Padding.Bottom = 5.000000000000000000
+          Position.Y = 160.000000000000000000
+          Size.Width = 630.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          Text = 'PHONE_NO'
+          object Edit5: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            Size.Width = 525.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            KillFocusByReturn = True
+          end
+        end
+        object ListBoxItem6: TListBoxItem
+          TextSettings.Font.Size = 10.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          StyledSettings = [Family, FontColor, Other]
+          Padding.Left = 100.000000000000000000
+          Padding.Top = 5.000000000000000000
+          Padding.Right = 5.000000000000000000
+          Padding.Bottom = 5.000000000000000000
+          Position.Y = 200.000000000000000000
+          Size.Width = 630.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 5
+          Text = 'ADDR_LINE1'
+          object Edit6: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            Size.Width = 525.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            KillFocusByReturn = True
+          end
+        end
+        object ListBoxItem7: TListBoxItem
+          TextSettings.Font.Size = 10.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          StyledSettings = [Family, FontColor, Other]
+          Padding.Left = 100.000000000000000000
+          Padding.Top = 5.000000000000000000
+          Padding.Right = 5.000000000000000000
+          Padding.Bottom = 5.000000000000000000
+          Position.Y = 240.000000000000000000
+          Size.Width = 630.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 6
+          Text = 'ADDR_LINE2'
+          object Edit7: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            Size.Width = 525.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            KillFocusByReturn = True
+          end
+        end
+        object ListBoxItem8: TListBoxItem
+          TextSettings.Font.Size = 10.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          StyledSettings = [Family, FontColor, Other]
+          Padding.Left = 100.000000000000000000
+          Padding.Top = 5.000000000000000000
+          Padding.Right = 5.000000000000000000
+          Padding.Bottom = 5.000000000000000000
+          Position.Y = 280.000000000000000000
+          Size.Width = 630.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 7
+          Text = 'CITY'
+          object Edit8: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            Size.Width = 525.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            KillFocusByReturn = True
+          end
+        end
+        object ListBoxItem9: TListBoxItem
+          TextSettings.Font.Size = 10.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          StyledSettings = [Family, FontColor, Other]
+          Padding.Left = 100.000000000000000000
+          Padding.Top = 5.000000000000000000
+          Padding.Right = 5.000000000000000000
+          Padding.Bottom = 5.000000000000000000
+          Position.Y = 320.000000000000000000
+          Size.Width = 630.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 8
+          Text = 'STATE'
+          object Edit9: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            Size.Width = 525.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            KillFocusByReturn = True
+          end
+        end
+        object ListBoxItem10: TListBoxItem
+          TextSettings.Font.Size = 10.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          StyledSettings = [Family, FontColor, Other]
+          Padding.Left = 100.000000000000000000
+          Padding.Top = 5.000000000000000000
+          Padding.Right = 5.000000000000000000
+          Padding.Bottom = 5.000000000000000000
+          Position.Y = 360.000000000000000000
+          Size.Width = 630.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 9
+          Text = 'COUNTRY'
+          object Edit10: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            Size.Width = 525.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            KillFocusByReturn = True
+          end
+        end
+        object ListBoxItem11: TListBoxItem
+          TextSettings.Font.Size = 10.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          StyledSettings = [Family, FontColor, Other]
+          Padding.Left = 100.000000000000000000
+          Padding.Top = 5.000000000000000000
+          Padding.Right = 5.000000000000000000
+          Padding.Bottom = 5.000000000000000000
+          Position.Y = 400.000000000000000000
+          Size.Width = 630.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 10
+          Text = 'POSTAL_CODE'
+          object Edit11: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            Size.Width = 525.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            KillFocusByReturn = True
+          end
+        end
+        object ListBoxItem12: TListBoxItem
+          TextSettings.Font.Size = 10.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          StyledSettings = [Family, FontColor, Other]
+          Padding.Left = 100.000000000000000000
+          Padding.Top = 5.000000000000000000
+          Padding.Right = 5.000000000000000000
+          Padding.Bottom = 5.000000000000000000
+          Position.Y = 440.000000000000000000
+          Size.Width = 630.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 11
+          Text = 'ON_HOLD'
+          object Edit12: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            Size.Width = 525.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            KillFocusByReturn = True
+          end
+        end
+      end
+      object Rectangle1: TRectangle
+        Align = Top
+        Fill.Color = claWhite
+        Size.Width = 640.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        object Button1: TButton
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 2.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'priortoolbutton'
+          TabOrder = 0
+          OnClick = Button1Click
+        end
+        object Button2: TButton
+          Action = LiveBindingsBindNavigateCancel1
+          Align = Right
+          Enabled = True
+          ImageIndex = -1
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Position.X = 585.000000000000000000
+          Position.Y = 2.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'toolbutton'
+          TabOrder = 1
+        end
+        object Button3: TButton
+          Action = LiveBindingsBindNavigatePost1
+          Align = Right
+          Enabled = True
+          ImageIndex = -1
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Position.X = 531.000000000000000000
+          Position.Y = 2.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'toolbutton'
+          TabOrder = 2
+        end
+        object Button4: TButton
+          Action = LiveBindingsBindNavigateDelete1
+          Align = Right
+          Enabled = True
+          ImageIndex = -1
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Position.X = 477.000000000000000000
+          Position.Y = 2.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'trashtoolbutton'
+          TabOrder = 3
+        end
+        object Button5: TButton
+          Action = LiveBindingsBindNavigateInsert1
+          Align = Right
+          Enabled = True
+          ImageIndex = -1
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Position.X = 423.000000000000000000
+          Position.Y = 2.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'composetoolbutton'
+          TabOrder = 4
+        end
+      end
+    end
+  end
+  object RESTClient1: TRESTClient
+    Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
+    AcceptCharset = 'UTF-8, *;q=0.8'
+    BaseURL = 'http://localhost:8080/customer'
+    Params = <>
+    RaiseExceptionOn500 = False
+    Left = 176
+    Top = 144
+  end
+  object RESTRequest1: TRESTRequest
+    Client = RESTClient1
+    Params = <>
+    Response = RESTResponse1
+    SynchronizedEvents = False
+    Left = 176
+    Top = 200
+  end
+  object RESTResponse1: TRESTResponse
+    Left = 176
+    Top = 256
+  end
+  object RESTResponseDataSetAdapter1: TRESTResponseDataSetAdapter
+    Dataset = FDMemTable1
+    FieldDefs = <>
+    ResponseJSON = RESTResponse1
+    Left = 176
+    Top = 312
+  end
+  object FDMemTable1: TFDMemTable
+    BeforePost = FDMemTable1BeforePost
+    AfterPost = FDMemTable1AfterPost
+    AfterDelete = FDMemTable1AfterDelete
+    FieldDefs = <>
+    CachedUpdates = True
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    StoreDefs = True
+    Left = 176
+    Top = 368
+    object FDMemTable1CUST_NO: TFDAutoIncField
+      FieldName = 'CUST_NO'
+      Origin = 'CUST_NO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      IdentityInsert = True
+    end
+    object FDMemTable1CUSTOMER: TStringField
+      FieldName = 'CUSTOMER'
+      Origin = 'CUSTOMER'
+      Required = True
+      Size = 25
+    end
+    object FDMemTable1CONTACT_FIRST: TStringField
+      FieldName = 'CONTACT_FIRST'
+      Origin = 'CONTACT_FIRST'
+      Size = 15
+    end
+    object FDMemTable1CONTACT_LAST: TStringField
+      FieldName = 'CONTACT_LAST'
+      Origin = 'CONTACT_LAST'
+    end
+    object FDMemTable1PHONE_NO: TStringField
+      FieldName = 'PHONE_NO'
+      Origin = 'PHONE_NO'
+    end
+    object FDMemTable1ADDRESS_LINE1: TStringField
+      FieldName = 'ADDRESS_LINE1'
+      Origin = 'ADDRESS_LINE1'
+      Size = 30
+    end
+    object FDMemTable1ADDRESS_LINE2: TStringField
+      FieldName = 'ADDRESS_LINE2'
+      Origin = 'ADDRESS_LINE2'
+      Size = 30
+    end
+    object FDMemTable1CITY: TStringField
+      FieldName = 'CITY'
+      Origin = 'CITY'
+      Size = 25
+    end
+    object FDMemTable1STATE_PROVINCE: TStringField
+      FieldName = 'STATE_PROVINCE'
+      Origin = 'STATE_PROVINCE'
+      Size = 15
+    end
+    object FDMemTable1COUNTRY: TStringField
+      FieldName = 'COUNTRY'
+      Origin = 'COUNTRY'
+      Size = 15
+    end
+    object FDMemTable1POSTAL_CODE: TStringField
+      FieldName = 'POSTAL_CODE'
+      Origin = 'POSTAL_CODE'
+      Size = 12
+    end
+    object FDMemTable1ON_HOLD: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'ON_HOLD'
+      Origin = 'ON_HOLD'
+      FixedChar = True
+      Size = 1
+    end
+  end
+  object RESTMethods: TRESTRequest
+    Client = RESTClient1
+    Params = <>
+    Response = RESTMethodsResponse
+    SynchronizedEvents = False
+    Left = 304
+    Top = 200
+  end
+  object RESTMethodsResponse: TRESTResponse
+    Left = 304
+    Top = 256
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = FDMemTable1
+    ScopeMappings = <>
+    Left = 304
+    Top = 320
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 300
+    Top = 373
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'CUSTOMER'
+      Control = ListView1
+      FillExpressions = <
+        item
+          SourceMemberName = 'PHONE_NO'
+          ControlMemberName = 'Detail'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'CUST_NO'
+      Control = Edit1
+      Track = True
+    end
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'CUSTOMER'
+      Control = Edit2
+      Track = True
+    end
+    object LinkControlToField4: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'CONTACT_FIRST'
+      Control = Edit3
+      Track = True
+    end
+    object LinkControlToField3: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'CONTACT_LAST'
+      Control = Edit4
+      Track = True
+    end
+    object LinkControlToField12: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'PHONE_NO'
+      Control = Edit5
+      Track = True
+    end
+    object LinkControlToField5: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'ADDRESS_LINE1'
+      Control = Edit6
+      Track = True
+    end
+    object LinkControlToField6: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'ADDRESS_LINE2'
+      Control = Edit7
+      Track = True
+    end
+    object LinkControlToField7: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'CITY'
+      Control = Edit8
+      Track = True
+    end
+    object LinkControlToField8: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'STATE_PROVINCE'
+      Control = Edit9
+      Track = True
+    end
+    object LinkControlToField9: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'COUNTRY'
+      Control = Edit10
+      Track = True
+    end
+    object LinkControlToField10: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'POSTAL_CODE'
+      Control = Edit11
+      Track = True
+    end
+    object LinkControlToField11: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'ON_HOLD'
+      Control = Edit12
+      Track = True
+    end
+  end
+  object ActionList1: TActionList
+    Left = 176
+    Top = 432
+    object NextTabAction1: TNextTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+    end
+    object PreviousTabAction1: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+    end
+    object LiveBindingsBindNavigateInsert1: TFMXBindNavigateInsert
+      Category = 'LiveBindings'
+      Text = 'Insert'
+      DataSource = BindSourceDB1
+    end
+    object LiveBindingsBindNavigateDelete1: TFMXBindNavigateDelete
+      Category = 'LiveBindings'
+      Text = 'Delete'
+      DataSource = BindSourceDB1
+    end
+    object LiveBindingsBindNavigatePost1: TFMXBindNavigatePost
+      Category = 'LiveBindings'
+      Text = 'Save'
+      DataSource = BindSourceDB1
+    end
+    object LiveBindingsBindNavigateCancel1: TFMXBindNavigateCancel
+      Category = 'LiveBindings'
+      Text = 'Cancel'
+      DataSource = BindSourceDB1
+    end
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'FMX'
+    Left = 296
+    Top = 432
+  end
+end

@@ -1,0 +1,23 @@
+inherited frmWeightMonitor_iPhone: TfrmWeightMonitor_iPhone
+  ClientHeight = 460
+  ClientWidth = 320
+  DesignerMasterStyle = 0
+  inherited pnlMain: TPanel
+    Size.Width = 320.000000000000000000
+    inherited btnConnect: TButton
+      Size.Width = 89.000000000000000000
+      Text = 'Find Scale'
+    end
+  end
+  inherited pnlLog: TPanel
+    Size.Width = 320.000000000000000000
+    Size.Height = 299.000000000000000000
+    inherited Memo1: TMemo
+      Size.Width = 320.000000000000000000
+      Size.Height = 299.000000000000000000
+    end
+  end
+  inherited Splitter1: TSplitter
+    Size.Width = 320.000000000000000000
+  end
+end

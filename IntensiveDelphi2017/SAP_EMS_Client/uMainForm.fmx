@@ -1,0 +1,286 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  ClientHeight = 480
+  ClientWidth = 640
+  StyleBook = StyleBook1
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object ToolBar1: TToolBar
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Margins.Bottom = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 5.000000000000000000
+    Size.Width = 630.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object SpeedButton1: TSpeedButton
+      Align = Center
+      Size.Width = 40.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'refreshtoolbutton'
+      Text = 'SpeedButton1'
+      OnClick = SpeedButton1Click
+    end
+    object SpeedButton2: TSpeedButton
+      Align = Right
+      Position.X = 590.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'escapetoolbuttonbordered'
+      Text = 'SpeedButton2'
+      Visible = False
+      OnClick = SpeedButton2Click
+    end
+  end
+  object lstResult: TListView
+    ItemAppearanceClassName = 'TDynamicAppearance'
+    ItemEditAppearanceClassName = 'TDynamicAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    Align = Client
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Margins.Bottom = 5.000000000000000000
+    Size.Width = 630.000000000000000000
+    Size.Height = 220.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'Text1'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.Width = 100.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Text2'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.Width = 100.000000000000000000
+        Appearance.PlaceOffset.X = 105.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Text3'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.Width = 100.000000000000000000
+        Appearance.PlaceOffset.X = 200.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Text4'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.Width = 100.000000000000000000
+        Appearance.PlaceOffset.X = 305.000000000000000000
+      end>
+    ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'Text1'
+        AppearanceClassName = 'TTextObjectAppearance'
+      end>
+  end
+  object chartResult: TChart
+    Position.Y = 280.000000000000000000
+    Foot.Font.StyleExt = {00040000000200000004000000}
+    Legend.Title.Font.StyleExt = {00070000000000000004000000}
+    Legend.Transparent = True
+    SubFoot.Font.StyleExt = {00040000000200000004000000}
+    Title.Text.Strings = (
+      'Net Value by Sales Organization')
+    View3DOptions.Elevation = 315
+    View3DOptions.Orthogonal = False
+    View3DOptions.Perspective = 0
+    View3DOptions.Rotation = 360
+    Zoom.Brush.Kind = None
+    Zoom.Pen.Fill.Color = claSilver
+    Align = Bottom
+    TabOrder = 12
+    Size.Width = 640.000000000000000000
+    Size.Height = 200.000000000000000000
+    Size.PlatformDefault = False
+    ColorPaletteIndex = 13
+    object Series1: TPieSeries
+      XValues.Order = loAscending
+      YValues.Name = 'Pie'
+      YValues.Order = loNone
+      Frame.InnerBrush.Kind = Gradient
+      Frame.InnerBrush.Gradient.EndColor = claGray
+      Frame.InnerBrush.Gradient.MidColor = claWhite
+      Frame.InnerBrush.Gradient.StartColor = xFF404040
+      Frame.InnerBrush.Gradient.Visible = True
+      Frame.InnerBrush.BackColor = claRed
+      Frame.MiddleBrush.Kind = Gradient
+      Frame.MiddleBrush.Gradient.EndColor = xFF828282
+      Frame.MiddleBrush.Gradient.MidColor = claWhite
+      Frame.MiddleBrush.Gradient.StartColor = claGray
+      Frame.MiddleBrush.Gradient.Visible = True
+      Frame.MiddleBrush.BackColor = claYellow
+      Frame.OuterBrush.Kind = Gradient
+      Frame.OuterBrush.Gradient.EndColor = xFF404040
+      Frame.OuterBrush.Gradient.MidColor = claWhite
+      Frame.OuterBrush.Gradient.StartColor = claSilver
+      Frame.OuterBrush.Gradient.Visible = True
+      Frame.OuterBrush.BackColor = claGreen
+      Frame.Width = 4
+      OtherSlice.Legend.Title.Font.StyleExt = {00070000000000000004000000}
+      OtherSlice.Legend.Visible = False
+      PiePen.Visible = False
+      Data = {
+        04080000000000000000108540FF04000000436172730000000000488140FF06
+        00000050686F6E65730000000000888240FF060000005461626C657300000000
+        00F07D40FF080000004D6F6E69746F72730000000000A08D40FF050000004C61
+        6D70730000000000588740FF090000004B6579626F6172647300000000004084
+        40FF0500000042696B65730000000000003B40FF06000000436861697273}
+    end
+  end
+  object StyleBook1: TStyleBook
+    Styles = <
+      item
+      end>
+    Left = 576
+    Top = 72
+  end
+  object FDMemTable1: TFDMemTable
+    FieldDefs = <>
+    CachedUpdates = True
+    IndexDefs = <>
+    IndexFieldNames = 'AUDAT'
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Adapter = FDTableAdapter1
+    StoreDefs = True
+    Left = 56
+    Top = 232
+    object FDMemTable1VBELN: TWideStringField
+      FieldName = 'VBELN'
+      Origin = 'VBELN'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object FDMemTable1AUDAT: TSQLTimeStampField
+      FieldName = 'AUDAT'
+      Origin = 'AUDAT'
+    end
+    object FDMemTable1VKORG: TWideStringField
+      FieldName = 'VKORG'
+      Origin = 'VKORG'
+      Size = 8
+    end
+    object FDMemTable1NETWR: TFloatField
+      FieldName = 'NETWR'
+      Origin = 'NETWR'
+    end
+  end
+  object FDTableAdapter1: TFDTableAdapter
+    SchemaAdapter = FDSchemaAdapter1
+    UpdateTableName = 'Table'
+    DatSTableName = 'VbakView'
+    Left = 56
+    Top = 176
+  end
+  object FDSchemaAdapter1: TFDSchemaAdapter
+    Left = 56
+    Top = 120
+  end
+  object EMSFireDACClient1: TEMSFireDACClient
+    Resource = 'SAPEMSServer'
+    Provider = EMSProvider1
+    SchemaAdapter = FDSchemaAdapter1
+    Left = 56
+    Top = 64
+  end
+  object EMSProvider1: TEMSProvider
+    ApiVersion = '1'
+    URLHost = 'localhost'
+    URLPort = 8080
+    Left = 56
+    Top = 8
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'FMX'
+    Left = 176
+    Top = 232
+  end
+  object FDStanStorageJSONLink1: TFDStanStorageJSONLink
+    Left = 176
+    Top = 176
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = FDMemTable1
+    ScopeMappings = <>
+    Left = 176
+    Top = 120
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 172
+    Top = 61
+    object LinkFillControlToField1: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = lstResult
+      Track = True
+      FillDataSource = BindSourceDB1
+      AutoFill = True
+      FillExpressions = <
+        item
+          SourceMemberName = 'VBELN'
+          ControlMemberName = 'Text1'
+        end
+        item
+          SourceMemberName = 'AUDAT'
+          ControlMemberName = 'Text2'
+        end
+        item
+          SourceMemberName = 'VKORG'
+          ControlMemberName = 'Text3'
+        end
+        item
+          SourceMemberName = 'NETWR'
+          ControlMemberName = 'Text4'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'DriverID=SQLite')
+    LoginPrompt = False
+    Left = 309
+    Top = 63
+  end
+  object FDLocalSQL1: TFDLocalSQL
+    Connection = FDConnection1
+    Active = True
+    DataSets = <
+      item
+        DataSet = FDMemTable1
+        Name = 'SALES'
+      end>
+    Left = 309
+    Top = 119
+  end
+  object FDQuery1: TFDQuery
+    LocalSQL = FDLocalSQL1
+    Connection = FDConnection1
+    SQL.Strings = (
+      'SELECT VKORG,'
+      '       SUM(NETWR) AS TOTAL '
+      '  FROM SALES'
+      'GROUP BY VKORG')
+    Left = 309
+    Top = 175
+  end
+end

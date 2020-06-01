@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{CD44DAE2-80D3-41D7-A83D-09F4CF6F33A3}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="IBLite101\IBLite101.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SQLite101\SQLite101.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FireDAC_IBLite\FireIBLite.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FireDAC_SQLite\FireSQLite.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="IBLite101">
+        <MSBuild Projects="IBLite101\IBLite101.cbproj"/>
+    </Target>
+    <Target Name="IBLite101:Clean">
+        <MSBuild Projects="IBLite101\IBLite101.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IBLite101:Make">
+        <MSBuild Projects="IBLite101\IBLite101.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="SQLite101">
+        <MSBuild Projects="SQLite101\SQLite101.cbproj"/>
+    </Target>
+    <Target Name="SQLite101:Clean">
+        <MSBuild Projects="SQLite101\SQLite101.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SQLite101:Make">
+        <MSBuild Projects="SQLite101\SQLite101.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="FireIBLite">
+        <MSBuild Projects="FireDAC_IBLite\FireIBLite.cbproj"/>
+    </Target>
+    <Target Name="FireIBLite:Clean">
+        <MSBuild Projects="FireDAC_IBLite\FireIBLite.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FireIBLite:Make">
+        <MSBuild Projects="FireDAC_IBLite\FireIBLite.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="FireSQLite">
+        <MSBuild Projects="FireDAC_SQLite\FireSQLite.cbproj"/>
+    </Target>
+    <Target Name="FireSQLite:Clean">
+        <MSBuild Projects="FireDAC_SQLite\FireSQLite.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FireSQLite:Make">
+        <MSBuild Projects="FireDAC_SQLite\FireSQLite.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="IBLite101;SQLite101;FireIBLite;FireSQLite"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="IBLite101:Clean;SQLite101:Clean;FireIBLite:Clean;FireSQLite:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="IBLite101:Make;SQLite101:Make;FireIBLite:Make;FireSQLite:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

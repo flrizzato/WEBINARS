@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F320F40B-B118-4E03-8B68-952D92F9E19F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="EMSNurseStationResource\NurseStationResourcePackage.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="NurseApp\NurseApp_PatientVitals.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PatientCheckinV2\PatientCheckIn2.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="NurseStationResourcePackage">
+        <MSBuild Projects="EMSNurseStationResource\NurseStationResourcePackage.dproj"/>
+    </Target>
+    <Target Name="NurseStationResourcePackage:Clean">
+        <MSBuild Projects="EMSNurseStationResource\NurseStationResourcePackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NurseStationResourcePackage:Make">
+        <MSBuild Projects="EMSNurseStationResource\NurseStationResourcePackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NurseApp_PatientVitals">
+        <MSBuild Projects="NurseApp\NurseApp_PatientVitals.dproj"/>
+    </Target>
+    <Target Name="NurseApp_PatientVitals:Clean">
+        <MSBuild Projects="NurseApp\NurseApp_PatientVitals.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NurseApp_PatientVitals:Make">
+        <MSBuild Projects="NurseApp\NurseApp_PatientVitals.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PatientCheckIn2">
+        <MSBuild Projects="PatientCheckinV2\PatientCheckIn2.dproj"/>
+    </Target>
+    <Target Name="PatientCheckIn2:Clean">
+        <MSBuild Projects="PatientCheckinV2\PatientCheckIn2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PatientCheckIn2:Make">
+        <MSBuild Projects="PatientCheckinV2\PatientCheckIn2.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="NurseStationResourcePackage;NurseApp_PatientVitals;PatientCheckIn2"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="NurseStationResourcePackage:Clean;NurseApp_PatientVitals:Clean;PatientCheckIn2:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="NurseStationResourcePackage:Make;NurseApp_PatientVitals:Make;PatientCheckIn2:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

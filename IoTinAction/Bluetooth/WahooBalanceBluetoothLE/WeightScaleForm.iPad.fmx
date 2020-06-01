@@ -1,0 +1,19 @@
+inherited frmHeartMonitor_iPad: TfrmHeartMonitor_iPad
+  ClientHeight = 1004
+  ClientWidth = 768
+  DesignerMasterStyle = 0
+  inherited pnlMain: TPanel
+    Size.Width = 768.000000000000000000
+  end
+  inherited pnlLog: TPanel
+    Size.Width = 768.000000000000000000
+    Size.Height = 843.000000000000000000
+    inherited Memo1: TMemo
+      Size.Width = 768.000000000000000000
+      Size.Height = 843.000000000000000000
+    end
+  end
+  inherited Splitter1: TSplitter
+    Size.Width = 768.000000000000000000
+  end
+end

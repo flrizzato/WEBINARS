@@ -1,0 +1,18 @@
+//create and run paserver linux container
+docker build -t paserverlinux .
+docker run --privileged -d -t -p 64211:64211 paserverlinux
+
+//create and run radserver linux container
+docker build -t radserverlinux .
+docker run --privileged -d -t -p 80:80 radserverlinux
+
+// check container status
+docker ps
+docker inspect <container ID>
+
+// execute something (bash) inside the container
+docker exec -it <container ID> bash
+
+// docker stop one/all containers
+docker stop <container ID>
+docker rm -f $(docker ps -aq)

@@ -1,0 +1,96 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8608AF85-0366-4252-A607-AECAEFDA0D3D}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="datasnap101\datasnap101.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="radserver101\radserver101.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Resources\CustomerFD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Resources\CustomerEMS.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ClientFD\ClientFD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ClientFMX\ClientFMX.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="datasnap101">
+        <MSBuild Projects="datasnap101\datasnap101.dproj"/>
+    </Target>
+    <Target Name="datasnap101:Clean">
+        <MSBuild Projects="datasnap101\datasnap101.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="datasnap101:Make">
+        <MSBuild Projects="datasnap101\datasnap101.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="radserver101">
+        <MSBuild Projects="radserver101\radserver101.dproj"/>
+    </Target>
+    <Target Name="radserver101:Clean">
+        <MSBuild Projects="radserver101\radserver101.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="radserver101:Make">
+        <MSBuild Projects="radserver101\radserver101.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CustomerFD">
+        <MSBuild Projects="Resources\CustomerFD.dproj"/>
+    </Target>
+    <Target Name="CustomerFD:Clean">
+        <MSBuild Projects="Resources\CustomerFD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomerFD:Make">
+        <MSBuild Projects="Resources\CustomerFD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CustomerEMS">
+        <MSBuild Projects="Resources\CustomerEMS.dproj"/>
+    </Target>
+    <Target Name="CustomerEMS:Clean">
+        <MSBuild Projects="Resources\CustomerEMS.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomerEMS:Make">
+        <MSBuild Projects="Resources\CustomerEMS.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ClientFD">
+        <MSBuild Projects="ClientFD\ClientFD.dproj"/>
+    </Target>
+    <Target Name="ClientFD:Clean">
+        <MSBuild Projects="ClientFD\ClientFD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ClientFD:Make">
+        <MSBuild Projects="ClientFD\ClientFD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ClientFMX">
+        <MSBuild Projects="ClientFMX\ClientFMX.dproj"/>
+    </Target>
+    <Target Name="ClientFMX:Clean">
+        <MSBuild Projects="ClientFMX\ClientFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ClientFMX:Make">
+        <MSBuild Projects="ClientFMX\ClientFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="datasnap101;radserver101;CustomerFD;CustomerEMS;ClientFD;ClientFMX"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="datasnap101:Clean;radserver101:Clean;CustomerFD:Clean;CustomerEMS:Clean;ClientFD:Clean;ClientFMX:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="datasnap101:Make;radserver101:Make;CustomerFD:Make;CustomerEMS:Make;ClientFD:Make;ClientFMX:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

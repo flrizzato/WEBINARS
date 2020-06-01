@@ -1,0 +1,171 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 582
+  ClientWidth = 762
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object ToolBar1: TToolBar
+    Size.Width = 762.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object SpeedButton1: TSpeedButton
+      Align = Left
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'cornerbuttonstyle'
+      Text = 'Open'
+      OnClick = SpeedButton1Click
+    end
+    object SpeedButton2: TSpeedButton
+      Align = Right
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 667.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'cornerbuttonstyle'
+      Text = '<<'
+      OnClick = SpeedButton2Click
+    end
+    object SpeedButton3: TSpeedButton
+      Align = Right
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 717.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'cornerbuttonstyle'
+      Text = '>>'
+      OnClick = SpeedButton3Click
+    end
+  end
+  object stgResult: TStringGrid
+    Align = Top
+    CanFocus = True
+    ClipChildren = True
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Margins.Bottom = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 45.000000000000000000
+    Size.Width = 752.000000000000000000
+    Size.Height = 255.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    RowCount = 0
+    Viewport.Width = 748.000000000000000000
+    Viewport.Height = 230.000000000000000000
+  end
+  object chartResult: TChart
+    Foot.Font.StyleExt = {00040000000200000004000000}
+    Legend.Title.Font.StyleExt = {00070000000000000004000000}
+    Legend.Transparent = True
+    SubFoot.Font.StyleExt = {00040000000200000004000000}
+    Title.AutoSize = False
+    Title.Text.Strings = (
+      'Opportunities Values')
+    Title.AdjustFrame = False
+    Pages.AutoScale = True
+    Pages.MaxPointsPerPage = 16
+    Zoom.Brush.Kind = None
+    Zoom.Pen.Fill.Color = claSilver
+    Align = Client
+    TabOrder = 5
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Margins.Bottom = 5.000000000000000000
+    Size.Width = 752.000000000000000000
+    Size.Height = 267.000000000000000000
+    Size.PlatformDefault = False
+    ColorPaletteIndex = 13
+    object Series1: TBarSeries
+      ColorEachPoint = True
+      Title = 'Series1'
+      XValues.Name = 'X'
+      XValues.Order = loNone
+      YValues.Name = 'Bar'
+      YValues.Order = loNone
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = MainDM.EmpOppQuery
+    ScopeMappings = <>
+    Left = 56
+    Top = 136
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 52
+    Top = 77
+    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = stgResult
+      Columns = <
+        item
+          MemberName = 'EMP_NO'
+          Header = 'Emp #'
+          Width = 65
+          ColumnStyle = 'IntegerColumn'
+        end
+        item
+          MemberName = 'FIRST_NAME'
+          Header = 'First Name'
+          Width = 100
+          ColumnStyle = 'StringColumn'
+        end
+        item
+          MemberName = 'LAST_NAME'
+          Header = 'Last Name'
+          Width = 100
+          ColumnStyle = 'StringColumn'
+        end
+        item
+          MemberName = 'JOB_CODE'
+          Header = 'Job'
+          Width = 65
+          ColumnStyle = 'StringColumn'
+        end
+        item
+          MemberName = 'Name'
+          Header = 'Opp Name'
+          Width = 200
+          ColumnStyle = 'StringColumn'
+        end
+        item
+          MemberName = 'StageName'
+          Header = 'Stage Name'
+          Width = 100
+          ColumnStyle = 'StringColumn'
+        end
+        item
+          MemberName = 'Amount'
+          Width = 85
+          ColumnStyle = 'CurrencyColumn'
+        end>
+    end
+  end
+end

@@ -1,0 +1,269 @@
+object Form23: TForm23
+  Left = 0
+  Top = 0
+  Caption = 'Form23'
+  ClientHeight = 480
+  ClientWidth = 685
+  Fill.Color = claAliceblue
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  DesignerMasterStyle = 2
+  object TabControl1: TTabControl
+    Align = Client
+    FullSize = True
+    Size.Width = 685.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = PlatformDefault
+    object GetData: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 343.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitemcontacts'
+      TabOrder = 0
+      Text = 'GetData'
+      object ListBox1: TListBox
+        Align = Top
+        Position.Y = 44.000000000000000000
+        Size.Width = 685.000000000000000000
+        Size.Height = 141.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 685.000000000000000000
+        Viewport.Height = 141.000000000000000000
+        object PatientName: TListBoxItem
+          Selectable = False
+          StyleLookup = 'listboxitemnodetail'
+          TabOrder = 0
+          Text = 'Patient Name'
+          object NameEdit: TComboBox
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Right
+            Margins.Right = 90.000000000000000000
+            Position.X = 371.000000000000000000
+            Position.Y = 7.000000000000000000
+            Size.Width = 224.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            OnChange = NameEditChange
+          end
+        end
+        object PatientHeartrate: TListBoxItem
+          Selectable = False
+          Position.Y = 44.000000000000000000
+          StyleLookup = 'listboxitemnodetail'
+          TabOrder = 1
+          Text = 'Patient Heartrate'
+          object PatientEdit: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Right
+            TabOrder = 1
+            KeyboardType = NumberPad
+            Position.X = 373.000000000000000000
+            Position.Y = 7.000000000000000000
+            Margins.Right = 10.000000000000000000
+            Size.Width = 224.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Current Patient Heartrate'
+          end
+          object SpeedButton2: TSpeedButton
+            Position.X = 184.000000000000000000
+            Position.Y = 6.000000000000000000
+            Size.Width = 145.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listitembutton'
+            Text = 'Connect to Device'
+            OnClick = SpeedButton2Click
+          end
+          object SaveData: TSpeedButton
+            Align = MostRight
+            Margins.Right = 5.000000000000000000
+            Position.X = 607.000000000000000000
+            Position.Y = 7.000000000000000000
+            Size.Width = 73.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listitembutton'
+            Text = 'SaveData'
+            OnClick = OnSaveData
+          end
+        end
+        object PatientWeight: TListBoxItem
+          Selectable = False
+          Position.Y = 88.000000000000000000
+          StyleLookup = 'listboxitemnodetail'
+          TabOrder = 2
+          Text = 'Patient Weight'
+          object WeightEdit: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Right
+            TabOrder = 1
+            KeyboardType = NumberPad
+            Position.X = 373.000000000000000000
+            Position.Y = 7.000000000000000000
+            Margins.Right = 10.000000000000000000
+            Size.Width = 224.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Current Patient Weight'
+          end
+          object SpeedButton3: TSpeedButton
+            Position.X = 184.000000000000000000
+            Position.Y = 6.000000000000000000
+            Size.Width = 145.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listitembutton'
+            Text = 'Connect to Device'
+            OnClick = SpeedButton3Click
+          end
+          object SpeedButton6: TSpeedButton
+            Align = MostRight
+            Margins.Right = 5.000000000000000000
+            Position.X = 607.000000000000000000
+            Position.Y = 7.000000000000000000
+            Size.Width = 73.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listitembutton'
+            Text = 'SaveData'
+            OnClick = OnSaveData
+          end
+        end
+      end
+      object ToolBar1: TToolBar
+        Align = MostTop
+        Size.Width = 685.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object Label1: TLabel
+          Align = Left
+          Margins.Left = 10.000000000000000000
+          Position.X = 10.000000000000000000
+          Size.Width = 183.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'toollabel'
+          Text = 'Record Patient Vitals'
+        end
+        object lblNamePatient: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, Style]
+          Size.Width = 492.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = claSteelblue
+        end
+      end
+    end
+    object StoredData: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 342.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitemmostviewed'
+      TabOrder = 0
+      Text = 'StoredData'
+      object ToolBar2: TToolBar
+        Size.Width = 685.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object StoredVitals: TLabel
+          Align = Contents
+          Size.Width = 685.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'toollabel'
+          TextSettings.HorzAlign = Center
+          Text = 'Stored Patient Vitals'
+        end
+      end
+      object ListBox2: TListBox
+        Align = Client
+        Size.Width = 685.000000000000000000
+        Size.Height = 387.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'transparentlistboxstyle'
+        TabOrder = 1
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        GroupingKind = Grouped
+        Viewport.Width = 685.000000000000000000
+        Viewport.Height = 387.000000000000000000
+        object RecordedPatientVitals: TListBoxGroupHeader
+          Size.Width = 685.000000000000000000
+          Size.Height = 56.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Recorded Patient Vitals'
+        end
+        object StoredPatientName: TListBoxItem
+          Selectable = False
+          Position.Y = 56.000000000000000000
+          StyleLookup = 'listboxitemrightdetail'
+          TabOrder = 1
+          Text = 'Patient Name'
+        end
+        object StoredPatientHeartrate: TListBoxItem
+          Selectable = False
+          ItemData.Detail = '0'
+          Position.Y = 100.000000000000000000
+          StyleLookup = 'listboxitemrightdetail'
+          TabOrder = 2
+          Text = 'Stored Patient Heartrate'
+        end
+        object StoredPatientWeight: TListBoxItem
+          Selectable = False
+          ItemData.Detail = '0'
+          Position.Y = 144.000000000000000000
+          StyleLookup = 'listboxitemrightdetail'
+          TabOrder = 3
+          Text = 'Stored Patient Weight'
+        end
+      end
+    end
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 100
+    Top = 213
+    object LinkFillControlToPropertyItemDataDetail: TLinkFillControlToProperty
+      Category = 'Quick Bindings'
+      Track = True
+      Control = NameEdit
+      Component = StoredPatientName
+      ComponentProperty = 'ItemData.Detail'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+end
