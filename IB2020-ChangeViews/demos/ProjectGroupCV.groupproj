@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5EF1CA25-4E7C-4BD8-9058-34ABF8299A9B}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ChangeViews101\ChangeViews101.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CustomerVCL\CustomerVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CustomerSync\CustomerSync.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CustomerSyncSERVER\CustomerSyncServer.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ChangeViews101">
+        <MSBuild Projects="ChangeViews101\ChangeViews101.dproj"/>
+    </Target>
+    <Target Name="ChangeViews101:Clean">
+        <MSBuild Projects="ChangeViews101\ChangeViews101.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ChangeViews101:Make">
+        <MSBuild Projects="ChangeViews101\ChangeViews101.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CustomerVCL">
+        <MSBuild Projects="CustomerVCL\CustomerVCL.dproj"/>
+    </Target>
+    <Target Name="CustomerVCL:Clean">
+        <MSBuild Projects="CustomerVCL\CustomerVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomerVCL:Make">
+        <MSBuild Projects="CustomerVCL\CustomerVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CustomerSync">
+        <MSBuild Projects="CustomerSync\CustomerSync.dproj"/>
+    </Target>
+    <Target Name="CustomerSync:Clean">
+        <MSBuild Projects="CustomerSync\CustomerSync.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomerSync:Make">
+        <MSBuild Projects="CustomerSync\CustomerSync.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CustomerSyncServer">
+        <MSBuild Projects="CustomerSyncSERVER\CustomerSyncServer.dproj"/>
+    </Target>
+    <Target Name="CustomerSyncServer:Clean">
+        <MSBuild Projects="CustomerSyncSERVER\CustomerSyncServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomerSyncServer:Make">
+        <MSBuild Projects="CustomerSyncSERVER\CustomerSyncServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ChangeViews101;CustomerVCL;CustomerSync;CustomerSyncServer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ChangeViews101:Clean;CustomerVCL:Clean;CustomerSync:Clean;CustomerSyncServer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ChangeViews101:Make;CustomerVCL:Make;CustomerSync:Make;CustomerSyncServer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
