@@ -1,7 +1,6 @@
 object MainForm: TMainForm
   Left = 0
   Top = 0
-  ActiveControl = edtUser
   Caption = 'Customer Sync'
   ClientHeight = 480
   ClientWidth = 640
@@ -45,122 +44,14 @@ object MainForm: TMainForm
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
         Size.Width = 630.000000000000000000
-        Size.Height = 369.000000000000000000
+        Size.Height = 444.000000000000000000
         Size.PlatformDefault = False
         ItemAppearance.ItemHeight = 54
         ItemAppearance.ItemEditHeight = 54
         OnItemClickEx = ListViewCustomerItemClickEx
-      end
-      object ToolBar1: TToolBar
-        Margins.Left = 5.000000000000000000
-        Margins.Top = 5.000000000000000000
-        Margins.Right = 5.000000000000000000
-        Position.X = 5.000000000000000000
-        Position.Y = 5.000000000000000000
-        Size.Width = 630.000000000000000000
-        Size.Height = 40.000000000000000000
-        Size.PlatformDefault = False
-        object edtUser: TEdit
-          Touch.InteractiveGestures = [LongTap, DoubleTap]
-          Align = Left
-          TabOrder = 1
-          Position.X = 90.000000000000000000
-          Position.Y = 5.000000000000000000
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Size.Width = 85.000000000000000000
-          Size.Height = 30.000000000000000000
-          Size.PlatformDefault = False
-          TextPrompt = 'UserName'
-        end
-        object edtPass: TEdit
-          Touch.InteractiveGestures = [LongTap, DoubleTap]
-          Align = Left
-          TabOrder = 2
-          Password = True
-          Position.X = 185.000000000000000000
-          Position.Y = 5.000000000000000000
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Size.Width = 85.000000000000000000
-          Size.Height = 30.000000000000000000
-          Size.PlatformDefault = False
-          TextPrompt = 'Password'
-        end
-        object butLogin: TButton
-          Align = Left
-          StyledSettings = [Family, Size, FontColor]
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Position.X = 280.000000000000000000
-          Position.Y = 5.000000000000000000
-          Size.Width = 85.000000000000000000
-          Size.Height = 30.000000000000000000
-          Size.PlatformDefault = False
-          StyleLookup = 'cornerbuttonstyle'
-          Text = 'Login'
-          TextSettings.Font.StyleExt = {00070000000000000004000000}
-          OnClick = butLoginClick
-        end
-        object Label1: TLabel
-          Align = Left
-          StyledSettings = [Family, Size, FontColor]
-          Size.Width = 85.000000000000000000
-          Size.Height = 40.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.Font.StyleExt = {00070000000000000004000000}
-          Text = '  System User:'
-        end
-        object butListViewEdit: TButton
-          Align = Right
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Position.X = 545.000000000000000000
-          Position.Y = 5.000000000000000000
-          Size.Width = 80.000000000000000000
-          Size.Height = 30.000000000000000000
-          Size.PlatformDefault = False
-          StyleLookup = 'composetoolbuttonbordered'
-          Text = 'butListViewEdit'
-        end
-      end
-      object StringGridCustomer: TStringGrid
-        Align = Client
-        CanFocus = True
-        ClipChildren = True
-        Margins.Left = 5.000000000000000000
-        Margins.Top = 5.000000000000000000
-        Margins.Right = 5.000000000000000000
-        Margins.Bottom = 5.000000000000000000
-        Size.Width = 630.000000000000000000
-        Size.Height = 369.000000000000000000
-        Size.PlatformDefault = False
-        RowCount = 0
-        Options = [AlternatingRowBackground, Editing, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
-        Viewport.Width = 626.000000000000000000
-        Viewport.Height = 344.000000000000000000
-      end
-      object NavigatorBindSourceDB1: TBindNavigator
-        Align = Bottom
-        Margins.Left = 5.000000000000000000
-        Margins.Right = 5.000000000000000000
-        Margins.Bottom = 5.000000000000000000
-        Position.X = 5.000000000000000000
-        Position.Y = 424.000000000000000000
-        Size.Width = 630.000000000000000000
-        Size.Height = 25.000000000000000000
-        Size.PlatformDefault = False
-        DataSource = BindSourceDB1
-        xRadius = 4.000000000000000000
-        yRadius = 4.000000000000000000
+        OnPullRefresh = ListViewCustomerPullRefresh
+        PullToRefresh = True
+        PullRefreshWait = True
       end
     end
     object tbsDataSync: TTabItem
@@ -189,6 +80,7 @@ object MainForm: TMainForm
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Left
           TabOrder = 1
+          Text = 'Mob1234'
           Position.X = 90.000000000000000000
           Position.Y = 5.000000000000000000
           Margins.Left = 5.000000000000000000
@@ -335,65 +227,20 @@ object MainForm: TMainForm
   end
   object dsCustomer: TDataSource
     DataSet = MainDM.qryCustomer
-    Left = 552
-    Top = 200
+    Left = 144
+    Top = 112
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = MainDM.qryCustomer
     ScopeMappings = <>
-    Left = 552
-    Top = 256
+    Left = 144
+    Top = 168
   end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 444
-    Top = 309
-    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
-      GridControl = StringGridCustomer
-      Columns = <
-        item
-          MemberName = 'CUSTNO'
-        end
-        item
-          MemberName = 'COMPANY'
-        end
-        item
-          MemberName = 'ADDR1'
-        end
-        item
-          MemberName = 'ADDR2'
-        end
-        item
-          MemberName = 'CITY'
-        end
-        item
-          MemberName = 'STATE'
-        end
-        item
-          MemberName = 'ZIP'
-        end
-        item
-          MemberName = 'COUNTRY'
-        end
-        item
-          MemberName = 'PHONE'
-        end
-        item
-          MemberName = 'FAX'
-        end
-        item
-          MemberName = 'TAXRATE'
-        end
-        item
-          MemberName = 'CONTACT'
-        end
-        item
-          MemberName = 'LASTINVOICEDATE'
-        end>
-    end
+    Left = 44
+    Top = 181
     object LinkListControlToField1: TLinkListControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
@@ -501,13 +348,13 @@ object MainForm: TMainForm
   object BindSourceDB3: TBindSourceDB
     DataSet = MainDM.qryLocalChanges
     ScopeMappings = <>
-    Left = 552
-    Top = 368
+    Left = 144
+    Top = 280
   end
   object BindSourceDB2: TBindSourceDB
     DataSet = MainDM.memRemoteChanges
     ScopeMappings = <>
-    Left = 553
-    Top = 312
+    Left = 145
+    Top = 224
   end
 end

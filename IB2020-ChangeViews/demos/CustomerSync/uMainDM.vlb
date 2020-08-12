@@ -1,157 +1,163 @@
 ﻿[qryCustomerLASTINVOICEDATE]
-Coordinates=120,1,175,33
+Coordinates=120,1,206,36
 
 [qryCustomerSTATE]
-Coordinates=120,53,112,33
+Coordinates=120,53,129,36
 
 [qryCustomerCOMPANY]
-Coordinates=314,1,131,33
+Coordinates=314,1,152,36
 
 [qryCustomerADDR1]
-Coordinates=120,105,113,33
+Coordinates=120,105,131,36
 
 [qryCustomerCONTACT]
-Coordinates=314,53,128,33
+Coordinates=314,53,149,36
 
 [qryCustomerCUSTNO]
-Coordinates=314,105,121,33
+Coordinates=314,105,142,36
 
 [qryCustomerADDR2]
-Coordinates=120,157,113,33
+Coordinates=120,157,131,36
 
 [qryCustomerCOUNTRY]
-Coordinates=314,157,129,33
+Coordinates=314,157,151,36
 
 [qryCustomerTAXRATE]
-Coordinates=314,209,127,33
+Coordinates=314,209,147,36
 
 [qryCustomer]
-Coordinates=255,10,101,285
+Coordinates=452,10,121,344
 
 [qryCustomerPHONE]
-Coordinates=120,209,115,33
+Coordinates=120,209,133,36
 
 [qryCustomerCITY]
-Coordinates=120,261,101,33
+Coordinates=120,261,117,36
 
 [cnnMastSQL]
-Coordinates=101,304,77,33
+Coordinates=101,304,88,36
 
 [qryCustomerFAX]
-Coordinates=333,261,99,33
+Coordinates=333,261,113,36
 
 [qryCustomerZIP]
-Coordinates=333,313,94,33
+Coordinates=333,313,108,36
 
 [FDPhysIBDriverLink1]
-Coordinates=333,365,119,33
+Coordinates=333,365,137,36
 
 [FDGUIxWaitCursor1]
-Coordinates=214,375,113,33
+Coordinates=214,375,132,36
 
 []
 Coordinates=701,209,183,33
 
 [FDStanStorageJSONLink1]
-Coordinates=107,448,143,33
+Coordinates=107,448,168,36
 
 [FDTransSnapshot]
-Coordinates=0,415,103,33
+Coordinates=0,415,118,36
 
 [RESTClientSync]
-Coordinates=595,10,76,69
+Coordinates=283,386,110,80
 
 [RESTRequestGET]
-Coordinates=497,10,88,87
+Coordinates=10,386,122,102
 
 [RESTResponseGET]
-Coordinates=149,10,96,303
+Coordinates=161,10,132,366
 
 [qryLocalChanges]
-Coordinates=366,10,121,285
+Coordinates=583,10,121,344
 
 [qryLocalChangesCUSTNO]
-Coordinates=701,365,165,33
+Coordinates=701,365,168,36
 
 [qryLocalChangesCOMPANY]
-Coordinates=701,261,174,33
+Coordinates=701,261,179,36
 
 [qryLocalChangesADDR1]
-Coordinates=483,1,157,33
+Coordinates=483,1,158,36
 
 [qryLocalChangesADDR2]
-Coordinates=701,469,157,33
+Coordinates=701,469,158,36
 
 [qryLocalChangesCITY]
-Coordinates=701,313,145,33
+Coordinates=701,313,144,36
 
 [qryLocalChangesSTATE]
-Coordinates=483,209,155,33
+Coordinates=483,209,156,36
 
 [qryLocalChangesZIP]
-Coordinates=701,417,137,33
+Coordinates=701,417,134,36
 
 [qryLocalChangesCOUNTRY]
-Coordinates=923,1,172,33
+Coordinates=923,1,177,36
 
 [qryLocalChangesPHONE]
-Coordinates=701,573,158,33
+Coordinates=701,573,160,36
 
 [qryLocalChangesFAX]
-Coordinates=701,521,142,33
+Coordinates=701,521,139,36
 
 [qryLocalChangesTAXRATE]
-Coordinates=923,105,170,33
+Coordinates=923,105,173,36
 
 [qryLocalChangesCONTACT]
-Coordinates=923,157,172,33
+Coordinates=923,157,176,36
 
 [qryLocalChangesLASTINVOICEDATE]
-Coordinates=923,53,219,33
+Coordinates=923,53,233,36
 
 [memRemoteChanges]
-Coordinates=10,10,129,303
+Coordinates=303,10,139,344
 Visible=True
 
 [memRemoteChangesCUSTNO]
-Coordinates=194,314,173,33
+Coordinates=194,314,192,36
 
 [memRemoteChangesCOMPANY]
-Coordinates=658,53,182,33
+Coordinates=658,53,203,36
 
 [memRemoteChangesADDR1]
-Coordinates=658,157,165,33
+Coordinates=658,157,182,36
 
 [memRemoteChangesADDR2]
-Coordinates=483,365,165,33
+Coordinates=483,365,182,36
 
 [memRemoteChangesCITY]
-Coordinates=0,352,153,33
+Coordinates=0,352,168,36
 
 [memRemoteChangesSTATE]
-Coordinates=658,1,163,33
+Coordinates=658,1,180,36
 
 [memRemoteChangesZIP]
-Coordinates=504,417,145,33
+Coordinates=504,417,159,36
 
 [memRemoteChangesCOUNTRY]
-Coordinates=483,53,180,33
+Coordinates=483,53,202,36
 
 [memRemoteChangesPHONE]
-Coordinates=483,157,166,33
+Coordinates=483,157,184,36
 
 [memRemoteChangesFAX]
-Coordinates=504,105,150,33
+Coordinates=504,105,163,36
 
 [memRemoteChangesTAXRATE]
-Coordinates=483,261,178,33
+Coordinates=483,261,197,36
 
 [memRemoteChangesCONTACT]
-Coordinates=483,313,180,33
+Coordinates=483,313,200,36
 
 [memRemoteChangesLASTINVOICEDATE]
-Coordinates=658,105,227,33
+Coordinates=658,105,257,36
 
 [cnnMastSQLDelta]
-Coordinates=256,448,101,33
+Coordinates=256,448,119,36
+
+[RESTRequestPOST]
+Coordinates=142,386,131,102
+
+[RESTResponsePOST]
+Coordinates=10,10,141,366
 

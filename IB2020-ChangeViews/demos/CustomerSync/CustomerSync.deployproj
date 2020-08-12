@@ -4,7 +4,7 @@
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>
     <PropertyGroup>
-        <DeviceId Condition="'$(Platform)'=='Android'">0056881268</DeviceId>
+        <DeviceId Condition="'$(Platform)'=='Android'"/>
         <DeviceId Condition="'$(Platform)'=='Android64'">0056881268</DeviceId>
         <DeviceId Condition="'$(Platform)'=='iOSDevice64'"/>
         <DeviceId Condition="'$(Platform)'=='iOSSimulator'"/>
@@ -468,6 +468,15 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="$(IBREDISTDIR)\linux64_togo\interbase\license.txt" Condition="'$(Config)'=='Release'">
+            <RemoteDir>CustomerSync\interbase\</RemoteDir>
+            <RemoteName>license.txt</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="$(IBREDISTDIR)\reg_ibtogo.txt" Condition="'$(Config)'=='Release'">
             <RemoteDir>CustomerSync\interbase\license\</RemoteDir>
             <RemoteName>reg_ibtogo.txt</RemoteName>
@@ -597,15 +606,6 @@
         <DeployFile Include="$(IBREDISTDIR)\linux64_togo\interbase\intl\gdsintl" Condition="'$(Config)'=='Debug'">
             <RemoteDir>CustomerSync\interbase\intl\</RemoteDir>
             <RemoteName>gdsintl</RemoteName>
-            <DeployClass>File</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="$(IBREDISTDIR)\linux64_togo\interbase\license.txt" Condition="'$(Config)'=='Release'">
-            <RemoteDir>CustomerSync\interbase\</RemoteDir>
-            <RemoteName>license.txt</RemoteName>
             <DeployClass>File</DeployClass>
             <Operation>0</Operation>
             <LocalCommand/>
@@ -886,18 +886,18 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(IBREDISTDIR)\reg_ibtogo.txt" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>CustomerSync\assets\internal\interbase\license\</RemoteDir>
-            <RemoteName>reg_ibtogo.txt</RemoteName>
+        <DeployFile Include="$(IBREDISTDIR)\android\interbase\admin.ib" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>CustomerSync\assets\internal\interbase\</RemoteDir>
+            <RemoteName>admin.ib</RemoteName>
             <DeployClass>File</DeployClass>
             <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(IBREDISTDIR)\android\interbase\admin.ib" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>CustomerSync\assets\internal\interbase\</RemoteDir>
-            <RemoteName>admin.ib</RemoteName>
+        <DeployFile Include="$(IBREDISTDIR)\reg_ibtogo.txt" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>CustomerSync\assets\internal\interbase\license\</RemoteDir>
+            <RemoteName>reg_ibtogo.txt</RemoteName>
             <DeployClass>File</DeployClass>
             <Operation>0</Operation>
             <LocalCommand/>
@@ -1080,15 +1080,6 @@
             <Overwrite>True</Overwrite>
             <Required>True</Required>
         </DeployFile>
-        <DeployFile Include="$(IBREDISTDIR)\reg_ibtogo.txt" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>CustomerSync\assets\internal\interbase\license\</RemoteDir>
-            <RemoteName>reg_ibtogo.txt</RemoteName>
-            <DeployClass>File</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="Android64\Debug\styles-v21.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>CustomerSync\res\values-v21\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
@@ -1269,6 +1260,15 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="C:\Embarcadero\InterBase\admin.ib" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>CustomerSync\assets\internal\interbase\</RemoteDir>
+            <RemoteName>admin.ib</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>CustomerSync\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
@@ -1404,9 +1404,9 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(IBREDISTDIR)\android64\interbase\admin.ib" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>CustomerSync\assets\internal\interbase\</RemoteDir>
-            <RemoteName>admin.ib</RemoteName>
+        <DeployFile Include="$(IBREDISTDIR)\reg_ibtogo.txt" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>CustomerSync\assets\internal\interbase\license\</RemoteDir>
+            <RemoteName>reg_ibtogo.txt</RemoteName>
             <DeployClass>File</DeployClass>
             <Operation>0</Operation>
             <LocalCommand/>

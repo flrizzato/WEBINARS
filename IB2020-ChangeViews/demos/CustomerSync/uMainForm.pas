@@ -19,20 +19,12 @@ type
     tabCustomer: TTabControl;
     tbsCustomer: TTabItem;
     tbsDataSync: TTabItem;
-    ToolBar1: TToolBar;
-    edtUser: TEdit;
-    edtPass: TEdit;
-    butLogin: TButton;
     dsCustomer: TDataSource;
-    StringGridCustomer: TStringGrid;
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
-    LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource;
-    NavigatorBindSourceDB1: TBindNavigator;
     StyleBook1: TStyleBook;
     ListViewCustomer: TListView;
     LinkListControlToField1: TLinkListControlToField;
-    Label1: TLabel;
     ToolBar2: TToolBar;
     edtDeviceName: TEdit;
     butLocalSync: TButton;
@@ -47,8 +39,6 @@ type
     LinkGridToDataSourceBindSourceDB3: TLinkGridToDataSource;
     BindSourceDB2: TBindSourceDB;
     LinkGridToDataSourceBindSourceDB2: TLinkGridToDataSource;
-    butListViewEdit: TButton;
-    procedure butLoginClick(Sender: TObject);
     procedure ListViewCustomerItemClickEx(const Sender: TObject;
       ItemIndex: Integer; const LocalClickPos: TPointF;
       const ItemObject: TListItemDrawable);
@@ -56,6 +46,7 @@ type
     procedure butLocalSyncClick(Sender: TObject);
     procedure butApplySyncClick(Sender: TObject);
     procedure butListViewEditClick(Sender: TObject);
+    procedure ListViewCustomerPullRefresh(Sender: TObject);
   private
     { Private declarations }
   public
@@ -68,7 +59,6 @@ var
 implementation
 
 {$R *.fmx}
-{$R *.Windows.fmx MSWINDOWS}
 {$R *.LgXhdpiPh.fmx ANDROID}
 
 uses uMainDM, FMX.DialogService;
@@ -87,12 +77,6 @@ procedure TMainForm.butLocalSyncClick(Sender: TObject);
 begin
   MainDM.DeviceName := edtDeviceName.Text;
   MainDM.GetLocalChanges;
-end;
-
-procedure TMainForm.butLoginClick(Sender: TObject);
-begin
-  if MainDM.DoDatabaseLogin(edtUser.Text, edtPass.Text) then
-    MainDM.qryCustomer.Open;
 end;
 
 procedure TMainForm.butRemoteSyncClick(Sender: TObject);
@@ -122,6 +106,13 @@ begin
         end;
       end);
   end;
+end;
+
+procedure TMainForm.ListViewCustomerPullRefresh(Sender: TObject);
+begin
+  if MainDM.qryCustomer.Active then
+    MainDM.qryCustomer.Close;
+  MainDM.qryCustomer.Open;
 end;
 
 end.

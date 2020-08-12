@@ -5,15 +5,6 @@ Visible=False
 [dsCustomer]
 Coordinates=187,1,84,36
 
-[edtUser]
-Coordinates=10,1128,60,58
-
-[edtPass]
-Coordinates=195,1128,61,58
-
-[butLogin]
-Coordinates=899,1000,64,58
-
 [tbsDataSync]
 Coordinates=646,1128,87,36
 
@@ -23,22 +14,15 @@ Coordinates=532,1128,88,36
 [tbsCustomer]
 Coordinates=759,1128,87,36
 
-[ToolBar1]
-Coordinates=872,1128,67,36
-
 []
-Coordinates=786,10,138,303
+Coordinates=872,1128,58,33
 Visible=True
 
 [BindSourceDB1]
-Coordinates=251,114,121,386
+Coordinates=251,114,127,366
 
 [BindingsList1]
 Coordinates=183,87,91,36
-
-[StringGridCustomer]
-Coordinates=452,260,128,344
-Visible=True
 
 [ListViewCustomer]
 Coordinates=457,10,118,190
@@ -52,9 +36,6 @@ Coordinates=965,1128,67,36
 
 [Label2]
 Coordinates=735,1000,53,58
-
-[Label1]
-Coordinates=656,1000,53,58
 
 [butLocalSync]
 Coordinates=414,1128,92,58
@@ -80,17 +61,14 @@ Coordinates=282,1128,106,58
 Coordinates=53,324,153,285
 
 [BindSourceDB3]
-Coordinates=409,630,121,344
+Coordinates=409,630,152,366
 
 [MainDM.qryCustomer]
 Coordinates=482,432,139,36
 Visible=False
 
 [BindSourceDB2]
-Coordinates=10,630,165,344
-
-[NavigatorBindSourceDB1]
-Coordinates=10,278,161,58
+Coordinates=10,630,176,366
 
 [lblRemote]
 Coordinates=96,1128,73,58
@@ -117,9 +95,6 @@ Visible=False
 
 [MainDM.RESTRequestGET]
 Coordinates=750,630,174,102
-
-[butListViewEdit]
-Coordinates=989,1000,103,58
 
 [MainDM.RESTResponsePOST]
 Coordinates=815,10,192,366

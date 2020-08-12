@@ -79,7 +79,6 @@ type
   public
     { Public declarations }
     property DeviceName: string read fDeviceName write fDeviceName;
-    function DoDatabaseLogin(fUser, fPass: string): Boolean;
     procedure GetRemoteChanges;
     procedure GetLocalChanges;
     procedure ApplyAllChanges;
@@ -89,8 +88,10 @@ var
   MainDM: TMainDM;
 
 const
-  fRemoteDBUser: string = 'USER2';
-  fRemoteDBPass: string = '123';
+  fSyncUser: string = 'USER3';
+  fSyncPass: string = '123';
+  fLocalUser: string = 'SYSDBA';
+  fLocalPass: string = 'masterkey';
 
 implementation
 
@@ -101,8 +102,10 @@ uses System.IOUtils;
 
 procedure TMainDM.cnnMastSQLBeforeConnect(Sender: TObject);
 
-  procedure SetupDatabase(fCnn: TFDConnection);
+  procedure SetupDatabase(fCnn: TFDConnection; fUser, fPass: string);
   begin
+    fCnn.Params.UserName := fUser;
+    fCnn.Params.Password := fPass;
     fCnn.Params.Database := TPath.GetDocumentsPath + PathDelim +
       'MASTSQL2020MOB.IB';
     fCnn.Params.Values['Protocol'] := 'local';
@@ -113,30 +116,9 @@ begin
 {$IFDEF MSWINDOWS}
   //
 {$ELSE}
-  SetupDatabase(cnnMastSQL);
-  SetupDatabase(cnnMastSQLDelta);
+  SetupDatabase(cnnMastSQL, fLocalUser, fLocalPass);
+  SetupDatabase(cnnMastSQLDelta, fSyncUser, fSyncPass);
 {$ENDIF}
-end;
-
-function TMainDM.DoDatabaseLogin(fUser, fPass: string): Boolean;
-
-  procedure SetupUsername(fCnn: TFDConnection);
-  begin
-    fCnn.Close;
-    fCnn.Params.UserName := fUser;
-    fCnn.Params.Password := fPass;
-    fCnn.Open;
-  end;
-
-begin
-  try
-    SetupUsername(cnnMastSQL);
-    SetupUsername(cnnMastSQLDelta);
-    result := True;
-  except
-    on E: Exception do
-      raise Exception.Create('Error Message: ' + E.Message);
-  end;
 end;
 
 procedure TMainDM.GetRemoteChanges;
@@ -144,8 +126,8 @@ begin
   try
     RESTRequestGET.Params.Clear;
     RESTRequestGET.AddParameter('DeviceName', fDeviceName, pkGETorPOST);
-    RESTRequestGET.AddParameter('DBUser', fRemoteDBUser, pkGETorPOST);
-    RESTRequestGET.AddParameter('DBPass', fRemoteDBPass, pkGETorPOST);
+    RESTRequestGET.AddParameter('DBUser', fSyncUser, pkGETorPOST);
+    RESTRequestGET.AddParameter('DBPass', fSyncPass, pkGETorPOST);
     RESTRequestGET.Execute;
   except
     on E: Exception do
@@ -156,16 +138,14 @@ end;
 procedure TMainDM.GetLocalChanges;
 begin
   try
-    if cnnMastSQLDelta.InTransaction then
-      cnnMastSQLDelta.Rollback;
+    cnnMastSQLDelta.Open;
     cnnMastSQLDelta.StartTransaction;
-
     cnnMastSQLDelta.ExecSQL('SET SUBSCRIPTION CUSTOMER_SUB AT ' +
       QuotedSTR(fDeviceName) + ' ACTIVE');
-
-    if qryLocalChanges.Active then
-      qryLocalChanges.Close;
     qryLocalChanges.Open;
+
+    if qryLocalChanges.RecordCount > 0 then
+      cnnMastSQLDelta.Rollback;
   except
     on E: Exception do
       raise Exception.Create('Error Message:' + E.Message);
@@ -190,8 +170,8 @@ begin
 
         RESTRequestPOST.Params.Clear;
         RESTRequestPOST.AddParameter('DeviceName', fDeviceName, pkGETorPOST);
-        RESTRequestPOST.AddParameter('DBUser', fRemoteDBUser, pkGETorPOST);
-        RESTRequestPOST.AddParameter('DBPass', fRemoteDBPass, pkGETorPOST);
+        RESTRequestPOST.AddParameter('DBUser', fSyncUser, pkGETorPOST);
+        RESTRequestPOST.AddParameter('DBPass', fSyncPass, pkGETorPOST);
         RESTRequestPOST.Execute;
 
         if RESTResponsePOST.StatusCode = 200 then
@@ -208,7 +188,8 @@ begin
           raise Exception.Create('Post error:' + E.Message);
       end;
     finally
-      fMemoryStream.Free;
+      if Assigned(fMemoryStream) then
+        FreeAndNil(fMemoryStream);
     end;
   end;
 
@@ -226,6 +207,7 @@ begin
           qryCustomer.ApplyUpdates(-1);
 
         // defining the local check point
+        cnnMastSQLDelta.Open;
         cnnMastSQLDelta.StartTransaction;
         cnnMastSQLDelta.ExecSQL('SET SUBSCRIPTION CUSTOMER_SUB AT ' +
           QuotedSTR(fDeviceName) + ' ACTIVE');

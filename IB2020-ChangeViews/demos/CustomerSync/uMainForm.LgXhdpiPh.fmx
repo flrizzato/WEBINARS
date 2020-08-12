@@ -19,65 +19,8 @@ inherited MainForm_LgXhdpiPh: TMainForm_LgXhdpiPh
       inherited ListViewCustomer: TListView
         AlternatingColors = True
         Size.Width = 440.000000000000000000
-        Size.Height = 583.000000000000000000
+        Size.Height = 636.000000000000000000
         SearchVisible = True
-        PullToRefresh = True
-        PullRefreshWait = True
-      end
-      inherited ToolBar1: TToolBar
-        Size.Width = 440.000000000000000000
-        Size.Height = 48.000000000000000000
-        inherited edtUser: TEdit
-          Text = 'SYSDBA'
-          TextSettings.Font.Size = 10.000000000000000000
-          Position.X = 80.000000000000000000
-          Size.Width = 65.000000000000000000
-          Size.Height = 32.000000000000000000
-          StyledSettings = [Family, Style, FontColor]
-        end
-        inherited edtPass: TEdit
-          Text = 'masterkey'
-          TextSettings.Font.Size = 10.000000000000000000
-          Position.X = 155.000000000000000000
-          Size.Width = 65.000000000000000000
-          Size.Height = 32.000000000000000000
-          StyledSettings = [Family, Style, FontColor]
-        end
-        inherited butLogin: TButton
-          StyledSettings = [Family, FontColor]
-          Position.X = 230.000000000000000000
-          Size.Width = 65.000000000000000000
-          Size.Height = 38.000000000000000000
-          TextSettings.Font.Size = 10.000000000000000000
-          TextSettings.Font.StyleExt = {00070000000000000004000000}
-        end
-        inherited Label1: TLabel
-          StyledSettings = [Family, FontColor]
-          Size.Width = 75.000000000000000000
-          Size.Height = 48.000000000000000000
-          TextSettings.Font.Size = 10.000000000000000000
-          TextSettings.Font.StyleExt = {00070000000000000004000000}
-        end
-        inherited butListViewEdit: TButton
-          Position.X = 387.000000000000000000
-          Size.Width = 48.000000000000000000
-          Size.Height = 48.000000000000000000
-          OnClick = butListViewEditClick
-        end
-      end
-      inherited StringGridCustomer: TStringGrid
-        Enabled = False
-        Size.Width = 440.000000000000000000
-        Size.Height = 553.000000000000000000
-        Visible = False
-        Viewport.Width = 440.000000000000000000
-        Viewport.Height = 553.000000000000000000
-      end
-      inherited NavigatorBindSourceDB1: TBindNavigator
-        Enabled = False
-        Position.Y = 616.000000000000000000
-        Size.Width = 440.000000000000000000
-        Visible = False
       end
     end
     inherited tbsDataSync: TTabItem
@@ -89,9 +32,9 @@ inherited MainForm_LgXhdpiPh: TMainForm_LgXhdpiPh
         Size.Width = 440.000000000000000000
         Size.Height = 48.000000000000000000
         inherited edtDeviceName: TEdit
-          Text = 'Mob123'
           TextSettings.Font.Size = 10.000000000000000000
           Position.X = 76.000000000000000000
+          Position.Y = 8.000000000000000000
           Margins.Left = 2.000000000000000000
           Margins.Right = 2.000000000000000000
           Size.Width = 70.000000000000000000

@@ -255,8 +255,8 @@ object MainDM: TMainDM
   object cnnMastSQLDelta: TFDConnection
     Params.Strings = (
       'Database=C:\data\MASTSQL2020.IB'
-      'User_Name=sysdba'
-      'Password=masterkey'
+      'User_Name=USER3'
+      'Password=123'
       'Protocol=TCPIP'
       'Server=localhost'
       'DriverID=IB')
@@ -269,7 +269,7 @@ object MainDM: TMainDM
   object RESTClientSync: TRESTClient
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'utf-8, *;q=0.8'
-    BaseURL = 'https://a56638a9e9c6.ngrok.io'
+    BaseURL = 'https://58cda42f10f8.ngrok.io'
     ContentType = 'application/x-www-form-urlencoded'
     Params = <>
     Left = 352
