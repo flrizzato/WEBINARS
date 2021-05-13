@@ -1,0 +1,108 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{485328C8-3836-4C57-ABFD-3FB27361FEAD}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ControlList101\ControlList101.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ControlListDraw\ControlListDrawDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ControlListLiveBinding\ControlListLiveBindingDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="NumberBoxDemo\NumberBoxDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VersionInfo\VersionInfo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="QuickWhatsVCL\QuickWhats.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FirebasePushNotifications\FirebasePushNotifications.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ControlList101">
+        <MSBuild Projects="ControlList101\ControlList101.dproj"/>
+    </Target>
+    <Target Name="ControlList101:Clean">
+        <MSBuild Projects="ControlList101\ControlList101.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ControlList101:Make">
+        <MSBuild Projects="ControlList101\ControlList101.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ControlListDrawDemo">
+        <MSBuild Projects="ControlListDraw\ControlListDrawDemo.dproj"/>
+    </Target>
+    <Target Name="ControlListDrawDemo:Clean">
+        <MSBuild Projects="ControlListDraw\ControlListDrawDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ControlListDrawDemo:Make">
+        <MSBuild Projects="ControlListDraw\ControlListDrawDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ControlListLiveBindingDemo">
+        <MSBuild Projects="ControlListLiveBinding\ControlListLiveBindingDemo.dproj"/>
+    </Target>
+    <Target Name="ControlListLiveBindingDemo:Clean">
+        <MSBuild Projects="ControlListLiveBinding\ControlListLiveBindingDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ControlListLiveBindingDemo:Make">
+        <MSBuild Projects="ControlListLiveBinding\ControlListLiveBindingDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NumberBoxDemo">
+        <MSBuild Projects="NumberBoxDemo\NumberBoxDemo.dproj"/>
+    </Target>
+    <Target Name="NumberBoxDemo:Clean">
+        <MSBuild Projects="NumberBoxDemo\NumberBoxDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NumberBoxDemo:Make">
+        <MSBuild Projects="NumberBoxDemo\NumberBoxDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VersionInfo">
+        <MSBuild Projects="VersionInfo\VersionInfo.dproj"/>
+    </Target>
+    <Target Name="VersionInfo:Clean">
+        <MSBuild Projects="VersionInfo\VersionInfo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VersionInfo:Make">
+        <MSBuild Projects="VersionInfo\VersionInfo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="QuickWhats">
+        <MSBuild Projects="QuickWhatsVCL\QuickWhats.dproj"/>
+    </Target>
+    <Target Name="QuickWhats:Clean">
+        <MSBuild Projects="QuickWhatsVCL\QuickWhats.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QuickWhats:Make">
+        <MSBuild Projects="QuickWhatsVCL\QuickWhats.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FirebasePushNotifications">
+        <MSBuild Projects="FirebasePushNotifications\FirebasePushNotifications.dproj"/>
+    </Target>
+    <Target Name="FirebasePushNotifications:Clean">
+        <MSBuild Projects="FirebasePushNotifications\FirebasePushNotifications.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FirebasePushNotifications:Make">
+        <MSBuild Projects="FirebasePushNotifications\FirebasePushNotifications.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ControlList101;ControlListDrawDemo;ControlListLiveBindingDemo;NumberBoxDemo;VersionInfo;QuickWhats;FirebasePushNotifications"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ControlList101:Clean;ControlListDrawDemo:Clean;ControlListLiveBindingDemo:Clean;NumberBoxDemo:Clean;VersionInfo:Clean;QuickWhats:Clean;FirebasePushNotifications:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ControlList101:Make;ControlListDrawDemo:Make;ControlListLiveBindingDemo:Make;NumberBoxDemo:Make;VersionInfo:Make;QuickWhats:Make;FirebasePushNotifications:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

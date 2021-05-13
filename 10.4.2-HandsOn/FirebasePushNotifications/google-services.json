@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "499332837101",
+    "firebase_url": "https://delphiacademy2020.firebaseio.com",
+    "project_id": "delphiacademy2020",
+    "storage_bucket": "delphiacademy2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499332837101:android:8e82a9647a0e770fb1a6e4",
+        "android_client_info": {
+          "package_name": "com.embarcadero.FirebaseApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499332837101-o9prm7s4rubviq5bcimjpb6hps1smsvp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwF1oPhjfsBVx3dRf5waYfXAQcztfHefc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499332837101-o9prm7s4rubviq5bcimjpb6hps1smsvp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "499332837101-2khmgev2alkr0kb70k82526ngtij8u08.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.rizzato.rizzatopush"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
