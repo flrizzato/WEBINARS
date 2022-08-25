@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D4BCACBF-41F8-4BBE-A2F1-BB8E9DA6F8D0}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CEP Async\RESTCEP.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Parallel Squares\ParallelSquares.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="RESTCEP">
+        <MSBuild Projects="CEP Async\RESTCEP.dproj"/>
+    </Target>
+    <Target Name="RESTCEP:Clean">
+        <MSBuild Projects="CEP Async\RESTCEP.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RESTCEP:Make">
+        <MSBuild Projects="CEP Async\RESTCEP.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ParallelSquares">
+        <MSBuild Projects="Parallel Squares\ParallelSquares.dproj"/>
+    </Target>
+    <Target Name="ParallelSquares:Clean">
+        <MSBuild Projects="Parallel Squares\ParallelSquares.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ParallelSquares:Make">
+        <MSBuild Projects="Parallel Squares\ParallelSquares.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="RESTCEP;ParallelSquares"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="RESTCEP:Clean;ParallelSquares:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="RESTCEP:Make;ParallelSquares:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

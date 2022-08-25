@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B4F4DBEB-1E4E-4B06-A43F-4F4A94694C75}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="VideoPlayback\VideoPlayerTest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VideoRemoteControl\VideoRemoteControl.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="VideoPlayerTest">
+        <MSBuild Projects="VideoPlayback\VideoPlayerTest.dproj"/>
+    </Target>
+    <Target Name="VideoPlayerTest:Clean">
+        <MSBuild Projects="VideoPlayback\VideoPlayerTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VideoPlayerTest:Make">
+        <MSBuild Projects="VideoPlayback\VideoPlayerTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VideoRemoteControl">
+        <MSBuild Projects="VideoRemoteControl\VideoRemoteControl.dproj"/>
+    </Target>
+    <Target Name="VideoRemoteControl:Clean">
+        <MSBuild Projects="VideoRemoteControl\VideoRemoteControl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VideoRemoteControl:Make">
+        <MSBuild Projects="VideoRemoteControl\VideoRemoteControl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="VideoPlayerTest;VideoRemoteControl"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="VideoPlayerTest:Clean;VideoRemoteControl:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="VideoPlayerTest:Make;VideoRemoteControl:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

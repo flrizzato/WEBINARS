@@ -1,0 +1,180 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{0D34DD6C-2327-4FB1-B548-C81DC84D6EC7}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ActivityIndicator\ActivityIndicator.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ToggleSwitch\ToggleSwitch.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SearchBox\SearchBox.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CardPanel\CardPanel.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SplitView\SplitView.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="StackPanel\StackPanel.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="NumberBoxDemo\NumberBoxDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCLCalendars\VCLCalendars.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ControlList101\ControlList101.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ControlListDraw\ControlListDrawDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCLColorsButtons\VCLControlColorsButtons.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WebBrowser\WebBrowser.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ControlsDesktop\ControlsDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ActivityIndicator">
+        <MSBuild Projects="ActivityIndicator\ActivityIndicator.dproj"/>
+    </Target>
+    <Target Name="ActivityIndicator:Clean">
+        <MSBuild Projects="ActivityIndicator\ActivityIndicator.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ActivityIndicator:Make">
+        <MSBuild Projects="ActivityIndicator\ActivityIndicator.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ToggleSwitch">
+        <MSBuild Projects="ToggleSwitch\ToggleSwitch.dproj"/>
+    </Target>
+    <Target Name="ToggleSwitch:Clean">
+        <MSBuild Projects="ToggleSwitch\ToggleSwitch.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ToggleSwitch:Make">
+        <MSBuild Projects="ToggleSwitch\ToggleSwitch.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SearchBox">
+        <MSBuild Projects="SearchBox\SearchBox.dproj"/>
+    </Target>
+    <Target Name="SearchBox:Clean">
+        <MSBuild Projects="SearchBox\SearchBox.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SearchBox:Make">
+        <MSBuild Projects="SearchBox\SearchBox.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CardPanel">
+        <MSBuild Projects="CardPanel\CardPanel.dproj"/>
+    </Target>
+    <Target Name="CardPanel:Clean">
+        <MSBuild Projects="CardPanel\CardPanel.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CardPanel:Make">
+        <MSBuild Projects="CardPanel\CardPanel.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SplitView">
+        <MSBuild Projects="SplitView\SplitView.dproj"/>
+    </Target>
+    <Target Name="SplitView:Clean">
+        <MSBuild Projects="SplitView\SplitView.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SplitView:Make">
+        <MSBuild Projects="SplitView\SplitView.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StackPanel">
+        <MSBuild Projects="StackPanel\StackPanel.dproj"/>
+    </Target>
+    <Target Name="StackPanel:Clean">
+        <MSBuild Projects="StackPanel\StackPanel.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StackPanel:Make">
+        <MSBuild Projects="StackPanel\StackPanel.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NumberBoxDemo">
+        <MSBuild Projects="NumberBoxDemo\NumberBoxDemo.dproj"/>
+    </Target>
+    <Target Name="NumberBoxDemo:Clean">
+        <MSBuild Projects="NumberBoxDemo\NumberBoxDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NumberBoxDemo:Make">
+        <MSBuild Projects="NumberBoxDemo\NumberBoxDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLCalendars">
+        <MSBuild Projects="VCLCalendars\VCLCalendars.dproj"/>
+    </Target>
+    <Target Name="VCLCalendars:Clean">
+        <MSBuild Projects="VCLCalendars\VCLCalendars.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLCalendars:Make">
+        <MSBuild Projects="VCLCalendars\VCLCalendars.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ControlList101">
+        <MSBuild Projects="ControlList101\ControlList101.dproj"/>
+    </Target>
+    <Target Name="ControlList101:Clean">
+        <MSBuild Projects="ControlList101\ControlList101.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ControlList101:Make">
+        <MSBuild Projects="ControlList101\ControlList101.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ControlListDrawDemo">
+        <MSBuild Projects="ControlListDraw\ControlListDrawDemo.dproj"/>
+    </Target>
+    <Target Name="ControlListDrawDemo:Clean">
+        <MSBuild Projects="ControlListDraw\ControlListDrawDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ControlListDrawDemo:Make">
+        <MSBuild Projects="ControlListDraw\ControlListDrawDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLControlColorsButtons">
+        <MSBuild Projects="VCLColorsButtons\VCLControlColorsButtons.dproj"/>
+    </Target>
+    <Target Name="VCLControlColorsButtons:Clean">
+        <MSBuild Projects="VCLColorsButtons\VCLControlColorsButtons.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLControlColorsButtons:Make">
+        <MSBuild Projects="VCLColorsButtons\VCLControlColorsButtons.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="WebBrowser">
+        <MSBuild Projects="WebBrowser\WebBrowser.dproj"/>
+    </Target>
+    <Target Name="WebBrowser:Clean">
+        <MSBuild Projects="WebBrowser\WebBrowser.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WebBrowser:Make">
+        <MSBuild Projects="WebBrowser\WebBrowser.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ControlsDemo">
+        <MSBuild Projects="ControlsDesktop\ControlsDemo.dproj"/>
+    </Target>
+    <Target Name="ControlsDemo:Clean">
+        <MSBuild Projects="ControlsDesktop\ControlsDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ControlsDemo:Make">
+        <MSBuild Projects="ControlsDesktop\ControlsDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ActivityIndicator;ToggleSwitch;SearchBox;CardPanel;SplitView;StackPanel;NumberBoxDemo;VCLCalendars;ControlList101;ControlListDrawDemo;VCLControlColorsButtons;WebBrowser;ControlsDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ActivityIndicator:Clean;ToggleSwitch:Clean;SearchBox:Clean;CardPanel:Clean;SplitView:Clean;StackPanel:Clean;NumberBoxDemo:Clean;VCLCalendars:Clean;ControlList101:Clean;ControlListDrawDemo:Clean;VCLControlColorsButtons:Clean;WebBrowser:Clean;ControlsDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ActivityIndicator:Make;ToggleSwitch:Make;SearchBox:Make;CardPanel:Make;SplitView:Make;StackPanel:Make;NumberBoxDemo:Make;VCLCalendars:Make;ControlList101:Make;ControlListDrawDemo:Make;VCLControlColorsButtons:Make;WebBrowser:Make;ControlsDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
